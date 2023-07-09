@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Latihan 2</title>
+	<style>
+		table,dl {
+			margin-left: 40px;
+		}
+
+		table, tr, th, td {
+			border: 1px solid black;
+			border-collapse: collapse;
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+		}
+
+		tr:nth-child(even) {
+			background-color:  #F2F2F2;
+		}
+
+		th {
+			background-color: lightblue;
+		}
+
+		.bilangan {
+			text-align: right;
+		}
+
+		.kota {
+			text-align: left;
+		}
+
+		dl dt {
+			padding-left: 0.5em;
+			padding-right: 0.5em;
+			background-color: lightblue;
+			float: left;
+			font-weight: bold;
+			margin-right: 2.0em;
+		}
+
+		dt::after {
+			content: ":";
+		}
+
+		dd {
+			background-color: lightyellow;
+		}
+
+	</style>
+</head>
+<body>
+	<h1>Education and Skills</h1>
+	<table>
+	<caption style="font-weight: bold; margin-bottom: 1ex;">NVQ Qualification in UK Core Cities</caption>
+		<tr>
+			<th rowspan="2" class="kota">City</th>
+			<th colspan="2">NVQ4</th>
+			<th colspan="2">NVQ3</th>
+			<th colspan="2">NVQ2</th>
+		</tr>
+		<tr>
+			<th>Count</th>
+			<th>% Rate</th>
+			<th>Count</th>
+			<th>% Rate</th>
+			<th>Count</th>
+			<th>% Rate</th>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Birmingham</th>
+			<td>241,900</td>
+			<td>33.22</td>
+			<td>379,900</td>
+			<td>52.2</td>
+			<td>497,100</td>
+			<td>68.3</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Bristol</th>
+			<td>155,900</td>
+			<td>49.3</td>
+			<td>216,300</td>
+			<td>68.5</td>
+			<td>256,300</td>
+			<td>81.1</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Cardiff</th>
+			<td>114,600</td>
+			<td>46.8</td>
+			<td>160,400</td>
+			<td>65.5</td>
+			<td>196,400</td>
+			<td>80.2</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Glasgow</th>
+			<td>197,100</td>
+			<td>45.9</td>
+			<td>249,600</td>
+			<td>58.1</td>
+			<td>297,000</td>
+			<td>69.1</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Leeds</th>
+			<td>197,600</td>
+			<td>38.2</td>
+			<td>301,100</td>
+			<td>58.3</td>
+			<td>392,800</td>
+			<td>76.0</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Liverpool</th>
+			<td>124,800</td>
+			<td>37.5</td>
+			<td>186,700</td>
+			<td>56.1</td>
+			<td>247,300</td>
+			<td>74.3</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Manchester</th>
+			<td style="background-color: yellow">169,800</td>
+			<td>44.1</td>
+			<td>232,600</td>
+			<td>60.4</td>
+			<td>279,800</td>
+			<td>72.7</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Newcastle</th>
+			<td>80,600</td>
+			<td>40.5</td>
+			<td>121,800</td>
+			<td>61.3</td>
+			<td>155,700</td>
+			<td>78.3</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Nottingham</th>
+			<td>70,200</td>
+			<td>31.2</td>
+			<td>125,000</td>
+			<td>55.7</td>
+			<td>156,900</td>
+			<td>69.9</td>
+		</tr>
+		<tr class="bilangan">
+			<th class="kota">Sheffield</th>
+			<td>166,800</td>
+			<td>44.1</td>
+			<td>249,900</td>
+			<td>66.1</td>
+			<td>298,900</td>
+			<td>79.0</td>
+		</tr>
+	</table>
+	<dl>
+		<dt>NVQ4</dt>
+		<dd>HND, Degree and Higher Degree level qualifications</dd>
+		<dt>NVQ3</dt>
+		<dd>2 or more A levels, or equivalent</dd>
+		<dt>NVQ2</dt>
+		<dd>5 or more GCSEs at grades A-C, or equivalent</dd>
+	</dl>
+	<footer>
+		<hr>
+		<p>Created by Damar Septia Nugraha (<a href="mailto:222011829@stis.ac.id">222011829@stis.ac.id</a>)</p>
+	</footer>
+</body>
+</html>

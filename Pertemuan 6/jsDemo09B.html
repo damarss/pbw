@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+    <title>JavaScript 09B: Objects</title>
+    <script>
+        class Employee {
+            #salary;
+            static #employeeCount;
+
+            constructor(name,salary) {
+                this.name = name;
+                this.#salary = salary;
+                if (Employee.#employeeCount == undefined) {
+                    Employee.#employeeCount = 0;
+                }
+                Employee.#employeeCount++;
+            }
+
+            getSalary() {
+                return this.#salary;
+            }
+            
+            setSalary(salary) {
+                this.#salary = salary;
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            static getEmployeeCount() {
+                return Employee.#employeeCount;
+            }
+            
+            remove() {
+                this.name = undefined;
+                this.setSalary(0);
+                Employee.#employeeCount--;
+            }
+        }
+
+        class Employees {
+            #employees = [];
+
+            constructor() {
+                this.#employees = [];
+            }
+
+            addEmployee(employee) {
+                this.#employees.push(employee);
+            }
+
+            getEmployeeCount() {
+                return this.#employees.length;
+            }
+
+            getEmployee(index) {
+                return this.#employees[index];
+            }
+
+            getEmployees() {
+                console.log(this.#employees);
+                return this.#employees;
+            }
+
+            removeEmployee(index) {
+                this.#employees[index].remove();
+                this.#employees.length--;
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        var e = [];
+        e[0] = new Employee("Hal Smith", 30000);
+        e[1] = new Employee("Tim Peck", 20000);
+        e[2] = new Employee("Ari Bell", 18000);
+
+        // For e[0].name we expect 'Hal Smith'
+        document.writeln("e[0].name = "+e[0].name+"<br>");
+
+        // For e[0].salary we expect 'undefined'
+        document.writeln("e[0].salary = "+e[0].salary+"<br>");
+
+        // For e[0].getSalary() we expect 30000
+        document.writeln("e[0]'s salary = "+e[0].getSalary()+"<br>");
+        
+        // For e[1].getName() we expect 'Tim Peck'
+        document.writeln("e[1]'s name = "+e[1].getName()+"<br>");
+
+        // For e[1].getSalary() we expect 20000
+        document.writeln("e[1]'s salary = "+e[1].getSalary()+"<br>");
+
+        // We make changes to e[1]
+        document.writeln("Changing e[1]'s name to 'Tom Beck' and " + "salary to 25000<br>");
+        e[1].name = "Tom Beck";
+        e[1].setSalary(25000);
+
+        // tidak berubah karena tidak memengaruhi attribute e[1] yang bersifat private
+        e[1].salary = 35000;
+        
+        // For e[1].getName() we now expect 'Tom Beck'
+        document.writeln("e[1]'s name = "+e[1].getName()+"<br>");
+
+        // For e[1].getSalary() we now expect 25000
+        document.writeln("e[1]'s salary = "+e[1].getSalary()+"<br>");
+
+        // print e[2]
+        document.writeln("e[2]'s name = "+e[2].getName()+"<br>");
+
+        // For e[1].getEmployeeCount() we expect 3
+        // document.writeln("Employees: "+ e[0].getEmployeeCount()+"<br>"); //tidak bisa karena bukan fungsi dari instance
+
+        document.writeln("Employees: "+ Employee.employeeCount+"<br>");
+        document.writeln("Employees: "+ Employee.getEmployeeCount()+"<br>");
+
+        // e[2].remove();
+        document.writeln("Employees: "+ e[2].getName()+"<br>");
+        // Expected to print the number 2 now
+        document.writeln("Employees: "+Employee.getEmployeeCount()+"<br>");
+
+        var employees = new Employees();
+        employees.addEmployee(e[0]);
+        employees.addEmployee(e[1]);
+        employees.addEmployee(e[2]);
+
+        // print before e[2] is removed
+        document.writeln("<br>Sebelum instance e[2] diremove<br>");
+        
+        employees.getEmployees().forEach(function(employee,index) {
+            document.writeln("Employee "+index+": "+employee.getName()+"<br>");
+        });
+
+        employees.removeEmployee(2);
+        document.writeln("<br>Setelah instance e[2] diremove<br>");
+
+        employees.getEmployees().forEach(function(employee,index) {
+            document.writeln("Employee "+index+": "+employee.getName()+"<br>");
+            //print salary
+            document.writeln("Salary "+index+": "+employee.getSalary()+"<br>");
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 2.0em;
+	color: Navy;
+	margin-top: 1em;
+}
+
+h2 {
+	font-size: 1.8em;
+	color: Navy;
+}
+
+nav ol {
+	list-style-type: none;
+}
+
+nav li {
+	padding: 0.2em 1em;
+	background-color: #AAB;
+	float: left;
+}
+
+nav li a {
+	padding: 0.2em 0.65em;
+	background-color: #CCD;
+	text-decoration: none;
+}
+
+nav li a:hover {
+	background-color: yellow;
+}
+
+#part1 {
+	clear: left;
+}
+
+.part1 {
+	background-color: lightyellow;
+	padding: 0.5em;
+	margin: 0.5em 0.0em;
+	border-radius: 1.0em;
+}
+
+ul,ol {
+	padding-left: 0.0em;
+	list-style-position: inside;
+}
+
+.topik ol {
+    counter-reset: item;
+}
+
+.topik ol li ol li::before {
+	padding-right: 0.1665em;
+}
+
+.topik ol li {
+	display: block;
+	list-style-type: decimal;
+}
+
+.topik ol li::before {
+	padding-right: 1em;
+	content: counters(item, ".") ". ";
+    counter-increment: item;
+}
+
+dt {
+	background-color: navy;
+	color: white;
+	border-top-left-radius: 1.0em;
+	border-top-right-radius: 1.0em;
+	padding: 0.5em;
+}
+
+dd {
+	background-color: #CCD;
+	margin-left: 0;
+	border-bottom-left-radius: 1.0em;
+	border-bottom-right-radius: 1.0em;
+	padding: 0.5em;
+	margin-bottom: 0.5em;
+}

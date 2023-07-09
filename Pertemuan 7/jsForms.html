@@ -1,0 +1,33 @@
+<!DOCTYPE HTML> 
+<html lang="en‐GB">
+<head>
+	<title>JavaScript and Forms</title>
+	<script>
+		function FahrenheitToCelsius(temperature) {
+			return (parseFloat(temperature)-32)/1.8
+		} 
+
+		function processInput(temperature) {
+			var validator = /^[0-9]/;
+			if (!validator.test(temperature)) {
+				document.getElementById('error').innerHTML = "Error: Data yang diinput harus berupa angka";
+				document.getElementById('df').focus();
+			} else {
+				document.getElementById('error').innerHTML = "";
+				return (parseFloat(temperature)-32)/1.8
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>JavaScript and Forms</h1>
+	<form name="form1" action="">
+		Temperature in Fahrenheit:
+		<input type="number" name="fahrenheit" id="df" size="10" value="0" pattern="[0-9]" title="Numbers only" required /><br />
+		Temperature in Celsius:
+		<input type="text" name="celsius" onfocus="blur();" /><br />
+		<input type="button" name="btnConvert" value="Convert" onclick="document.form1.celsius.value =	processInput(document.form1.fahrenheit.value).toFixed(1);" />
+	</form>
+	<div id="error"></div>
+</body>
+</html>
